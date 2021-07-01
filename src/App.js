@@ -1,8 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
-import Bootstraptest from './Components/Bootstraptest';
+// import Bootstraptest from './Components/Bootstraptest';
 import {Navbar, Nav} from 'react-bootstrap'
-import Apitest from './Components/Apitest';
+// import Apitest from './Components/Apitest';
 import SelectRecipe from './Components/FetchLink/SelectRecipe';
 
 function App() {

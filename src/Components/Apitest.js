@@ -26,7 +26,7 @@ const url = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=$
 
 useEffect(()=>{
     setStatus("pending")
-    // fetch(url)
+    fetch(url)
     .then((res)=>{
         if (res.ok) {
             return res.json()
@@ -48,7 +48,7 @@ const showRecipe = (status) => {
         return "Please enter an ingredient"
       }
   
-      if (status == "pending") {
+      if (status === "pending") {
         return "Loading..."
       }
   
