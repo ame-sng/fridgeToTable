@@ -10,17 +10,15 @@ import { useState, useEffect } from 'react'
 // const value = "apples,+flour,+sugar"
 // const url = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${value}&ranking=2&apiKey=925c36ae200448dda7bbde41b0911b40`
 
-// fetch(url)
-// .then((res)=> res.json())
-// .then((data)=> console.log("recipe: ", data.id))
 
 
 const Apitest = () => {
 const [status, setStatus] = useState("idle")
 const [recipe, setRecipe]= useState("")
+const key=process.env.REACT_APP_APIKEY
 
 const value = "apples,+flour,+sugar"
-const url = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${value}&ranking=2&apiKey=${process.env.REACT_APP_APIKEY}`
+const url = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${value}&ranking=2&apiKey=${key}`
 
 // console.log(url)
 
