@@ -4,7 +4,6 @@ import React from 'react';
 // import Apitest from './Components/Recipe/Apitest';
 import Navigation from './Components/Pages/Navigation';
 import Main from './Components/Pages/Main';
-import './app.css'
 import {createMuiTheme, ThemeProvider} from '@material-ui/core'
 
 const theme = createMuiTheme({
