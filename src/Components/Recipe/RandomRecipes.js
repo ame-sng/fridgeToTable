@@ -1,8 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import RandomRecipeCard from './RandomRecipeCard'
-import { CardDeck } from 'react-bootstrap'
-import 'bootstrap/dist/css/bootstrap.min.css'
+import Grid from '@material-ui/core/Grid';
 
 const RandomRecipes = () => {
     const [listRecipes, setListRecipes] = useState([])
@@ -53,9 +52,10 @@ const RandomRecipes = () => {
 
     return (
         <div>
-            <CardDeck>
+            <Grid container spacing={2}>
            <ShowRecipes />
-            </CardDeck>
+            </Grid>
+            
         </div>
     )
 }

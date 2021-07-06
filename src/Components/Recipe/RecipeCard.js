@@ -51,7 +51,6 @@ const RecipeCard = ({recipe}) => {
         return (
             <>
             <Grid key={recipe.id} item xs={4} md={3} lg={3}>
-            
             <Link to={"/recipes/" + recipe.id}>
             <Card className={classes.root}>
               <CardActionArea>
