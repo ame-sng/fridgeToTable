@@ -1,22 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+// import {Route, Link, Redirect, Switch} from 'react-router-dom'
 // import Bootstraptest from './Components/Bootstraptest';
-import Apitest from './Components/Apitest';
-import Navigation from './Components/Navigation';
-import SelectRecipe from './Components/FetchLink/SelectRecipe';
+// import Apitest from './Components/Recipe/Apitest';
+import Navigation from './Components/Pages/Navigation';
+import Main from './Components/Pages/Main';
+import './app.css'
+import {createMuiTheme, ThemeProvider} from '@material-ui/core'
+
+const theme = createMuiTheme({
+  typography:{
+    fontFamily: 'Futura',
+    h3:{
+      fontFamily: 'Bona Nova'
+    }
+  }
+})
 
 function App() {
   return (
-    <>
-    <Navigation />
-    <div className="App">
-      <header className="App-header">
-        <SelectRecipe />
-        {/* <Bootstraptest /> */}
-        <Apitest />
-      </header>
+    <ThemeProvider theme={theme}>
+    <div>
+      <main>
+      <Navigation />
+      <Main />
+      </main>
     </div>
-   </>
+    </ThemeProvider>
   );
 }
 
