@@ -1,12 +1,16 @@
 import React, {useState, useEffect} from 'react'
-import { Link } from 'react-router-dom'
-import RandomRecipeCard from './RandomRecipeCard'
+// import { Link } from 'react-router-dom'
+import ShowRecipeCards from './ShowRecipeCards';
 import Grid from '@material-ui/core/Grid';
 
+
+
 const RandomRecipes = () => {
+    
     const [listRecipes, setListRecipes] = useState([])
     const [status, setStatus] = useState("idle")
-    const url = `https://api.spoonacular.com/recipes/random?number=2&apiKey=${process.env.REACT_APP_APIKEY}`
+    const key = process.env.REACT_APP_APIKEY
+    const url = `https://api.spoonacular.com/recipes/random?number=2&apiKey=${key}`
     
     useEffect(() => {
         setStatus("pending");
@@ -25,37 +29,14 @@ const RandomRecipes = () => {
           .catch((error) => {
             setStatus("error");
           });
-      }, []);
-    
-    const ShowRecipes = () => {
-        if (status === "idle") {
-            return "";
-          }
-      
-          if (status === "pending") {
-            return "Loading...";
-          }
-      
-          if (status === "error") {
-            return "Error Loading";
-          }
-          else{
-            console.log("ShowRecipes working")
-            return (listRecipes.map((recipe)=>
-                {return <RandomRecipeCard recipe={recipe} />} 
-               )) 
-          }
-  
-    }
-        
+      }, [url]);
         
 
     return (
         <div>
             <Grid container spacing={2}>
-           <ShowRecipes />
-            </Grid>
-            
+           <ShowRecipeCards listRecipes={listRecipes} status={status} />
+            </Grid> 
         </div>
     )
 }

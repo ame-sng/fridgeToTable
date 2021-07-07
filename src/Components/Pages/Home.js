@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import RandomRecipes from '../Recipe/RandomRecipes'
+import RandomRecipes from '../RandomRecipes/RandomRecipes'
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 import { makeStyles } from '@material-ui/core'
@@ -55,7 +55,7 @@ const Home = () => {
            </Button>
         </div>
         <br/>
-        
+
         <Container>
            <RandomRecipes />
         </Container>

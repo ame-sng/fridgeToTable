@@ -50,9 +50,9 @@ const RecipeCard = ({recipe}) => {
     const classes = useStyles();
         return (
             <>
-            <Grid key={recipe.id} item xs={4} md={3} lg={3}>
+            <Grid item xs={4} md={3} lg={3}>
             <Link to={"/recipes/" + recipe.id}>
-            <Card className={classes.root}>
+            <Card key={recipe.id} className={classes.root}>
               <CardActionArea>
                 <CardMedia
                   className={classes.media}

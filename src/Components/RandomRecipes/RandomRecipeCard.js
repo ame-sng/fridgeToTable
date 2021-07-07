@@ -74,7 +74,8 @@ const RandomRecipeCard = ({recipe}) => {
              </Link>
             </Grid>
             </>
-    
+        
+
     )
 }
 

@@ -1,6 +1,4 @@
-import React, { useEffect } from "react";
-import ShowRecipe from "./ShowRecipe";
-import { useState } from "react";
+import React from 'react';
 import { Container } from "@material-ui/core";
 import { Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core";
@@ -8,122 +6,80 @@ import { TextField } from "@material-ui/core";
 import { InputAdornment } from "@material-ui/core";
 import SearchRoundedIcon from "@material-ui/icons/SearchRounded";
 import { Button } from "@material-ui/core";
-import Grid from '@material-ui/core/Grid';
 import { FormControl } from "@material-ui/core";
 import {Select} from '@material-ui/core'
 import { InputLabel } from "@material-ui/core";
 import { MenuItem } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import { useParams } from "react-router";
+
 
 
 const useStyles = makeStyles({
-  h1: {
-    marginTop: 15,
-    marginBottom: 20,
-  },
-  header: {
-    backgroundColor: "#ffda07",
-    padding: 50,
-  },
-  btn: {
-    backgroundColor: "black",
-    margin: "0 auto",
-    marginBottom: 20,
-    display: "flex",
-    fontFamily: "Futura",
-    fontWeight: 700,
-    fontSize: 12,
-    letterSpacing: 1,
-    borderRadius: 0,
-    padding: '0.5rem 1.5rem',
-    '&:hover':{
-      backgroundColor: '#302903',
-  }
-  },
-  field: {
-    backgroundColor: "white",
-    borderRadius: 5,
-    marginTop: 20,
-    marginBottom: 20,
-    display: "block",
-  },
-  formControl:{
-    minWidth: 120,
-  },
-});
-
-const InputForm = () => {
-
-  const {ingredients, cuisine, type} = useParams();
-  const classes = useStyles();
-  const [recipes, setRecipes] = useState([]);
-  const [status, setStatus] = useState("idle");
-  const [addValue, setAddValue] = useState({
-  ingredients: "",
-  type: "",
-  cuisine:"",
-})
-
-  const [link, setLink] = useState({})
-
-  const handleChange = (event) => {
-    setAddValue({...addValue,
-      ingredients: event.target.value})
-      console.log("ingredients added: ", addValue)
-  };
-
-  const cuisineChange=(event) => {
-    setAddValue({...addValue,
-      cuisine: event.target.value})
-      console.log("cuisine added: ",addValue)
-  }
-
-  const typeChange=(event) => {
-    setAddValue({...addValue,
-      type: event.target.value})
-      console.log("type added: ",addValue)
-  }
-  const getRecipes = () => {
-    setLink(addValue)
-  };
-
-  // const handleKeyDown = (event) =>{
-  //   if(event.key === "Enter"){
-  //     getRecipes();
-  //     console.log("enter key works")
-  //   }
-  // }
-
-  // const url = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${fetchAPI}&number=8&ranking=2&apiKey=${process.env.REACT_APP_APIKEY}`;
-
-  const url = `https://api.spoonacular.com/recipes/complexSearch?includeIngredients=${link.ingredients}&number=2&instructionsRequired=true&cuisine=${link.cuisine}&type=${link.type}&apiKey=${process.env.REACT_APP_APIKEY}`
-
-  useEffect(() => {
-    if(addValue.ingredients === "" && addValue.cuisine === "" && addValue.type === ""){
-      return
+    h1: {
+      marginTop: 15,
+      marginBottom: 20,
+    },
+    header: {
+      backgroundColor: "#ffda07",
+      padding: 50,
+    },
+    btn: {
+      backgroundColor: "black",
+      margin: "0 auto",
+      marginBottom: 20,
+      display: "flex",
+      fontFamily: "Futura",
+      fontWeight: 700,
+      fontSize: 12,
+      letterSpacing: 1,
+      borderRadius: 0,
+      padding: '0.5rem 1.5rem',
+      '&:hover':{
+        backgroundColor: '#302903',
     }
-    setStatus("pending");
-    fetch(url)
-      .then((res) => {
-        if (res.ok) {
-          return res.json();
-        }
-        throw new Error("Bad Response from Server");
-      })
-      .then((data) => {
-        data.results.length === 0 ? setStatus("norecipes") : setStatus("resolved");
-        console.log("2 recipe cards: ", data.results.length);
-        setRecipes(data.results);
-      })
-      .catch((error) => {
-        setStatus("error");
-      });
-    }, [link]);
+    },
+    field: {
+      backgroundColor: "white",
+      borderRadius: 5,
+      marginTop: 20,
+      marginBottom: 20,
+      display: "block",
+    },
+    formControl:{
+      minWidth: 120,
+    },
+  });
 
-  return (
-    <div>
-      <div className={classes.header}>
+const TheForm = (props) => {
+    const classes = useStyles();
+    
+
+    const handleChange = (event) => {
+        // setIngredients(event.target.value);
+        props.setAddValue({...props.addValue,
+        ingredients: event.target.value})
+          console.log("ingredients added: ",  props.addValue)
+      };
+    
+      const cuisineChange=(event) => {
+        props.setAddValue({... props.addValue,
+          cuisine: event.target.value})
+          console.log("cuisine added: ", props.addValue)
+      }
+    
+      const typeChange=(event) => {
+        props.setAddValue({... props.addValue,
+          type: event.target.value})
+          console.log("type added: ", props.ddValue)
+      }
+      const getRecipes = () => {
+        // setFetchAPI(ingredients);
+        //  setIngredients("")
+        props.setLink( props.addValue)
+      };
+
+    return (
+        <div className={classes.header}>
         <Typography
           className={classes.h1}
           variant="h3"
@@ -152,9 +108,8 @@ const InputForm = () => {
                 ),
               }}
               placeholder="Apples, Flour, Sugar"
-              value={addValue.ingredients}
+              value={ props.addValue.ingredients}
               onChange={handleChange}
-              // onKeyDown={handleKeyDown}
             />
           </form>
           <FormControl className={classes.formControl}>
@@ -162,7 +117,7 @@ const InputForm = () => {
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          value={addValue.cuisine}
+          value={ props.addValue.cuisine}
           onChange={cuisineChange}
         >
           <MenuItem value={"African"}>African</MenuItem>
@@ -198,7 +153,7 @@ const InputForm = () => {
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          value={addValue.type}
+          value={ props.addValue.type}
           onChange={typeChange}
         >
           <MenuItem value={"main course"}>Main Course</MenuItem>
@@ -218,8 +173,7 @@ const InputForm = () => {
         </Select>
       </FormControl>
       <br/> <br/>
-        
-      
+          <Link to={"/recipes/search"}>
             <Button
             className={classes.btn}
             style={{ color: "white" }}
@@ -228,18 +182,10 @@ const InputForm = () => {
             >
             Show Me Recipes
           </Button>
-      
-            
+            </Link>
         </Container>
       </div>
-      <br /> <br />
-        <Container>
-          <Grid container spacing={2}>
-            <ShowRecipe recipes={recipes} status={status}/>
-        </Grid>
-        </Container>
-    </div>
-  );
-};
+    )
+}
 
-export default InputForm;
+export default TheForm
