@@ -58,6 +58,7 @@ Hair-pulling, watching youtube tutorials, breaking down the problem (_what am I 
 
 ### Add-ons/Improvements in the future
 
+- Empty input after clicking button
 - Save your favourite recipes
 - Multiple select for cuisine and type
 - Better refactoring
