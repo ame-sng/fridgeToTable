@@ -2,6 +2,7 @@ import React from 'react'
 import RecipeCard from './RecipeCard';
 import { Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core';
+import { CircularProgress } from '@material-ui/core';
 
 const useStyles = makeStyles({
     message: {
@@ -16,12 +17,7 @@ const ShowRecipe = ({recipes, status}) => {
     }
 
     if (status === "pending") {
-      return <Typography
-      className={classes.message}
-      variant="h4"
-      gutterBottom>
-      Recipes Loading...
-      </Typography>;
+      return <CircularProgress color="black" className={classes.message}/>
     }
 
     if (status === "norecipes"){

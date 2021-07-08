@@ -32,9 +32,9 @@ const Navigation = () => {
     position="static"
     className={classes.appbar}>
       <Toolbar>
-        <Typography className={classes.title} variant="h6"><Link to="/" style={{ color: 'white' }}>Fridge to Table</Link></Typography>
-        <Button className={classes.menuItems} color="inherit"><Link to="/" style={{ color: 'white' }}>Home</Link></Button>
-        <Button className={classes.menuItems} color="inherit"><Link to="/recipes" style={{ color: 'white' }}>Recipes</Link></Button>
+        <Typography className={classes.title} variant="h6"><Link to="/" style={{ color: 'white', textDecoration: 'none' }}>Fridge to Table</Link></Typography>
+        <Button className={classes.menuItems} color="inherit"><Link to="/" style={{ color: 'white', textDecoration: 'none' }}>Home</Link></Button>
+        <Button className={classes.menuItems} color="inherit"><Link to="/recipes" style={{ color: 'white', textDecoration: 'none' }}>Recipes</Link></Button>
 
       </Toolbar>
     </AppBar>

@@ -10,7 +10,7 @@ import { Container } from '@material-ui/core'
 import { Card } from '@material-ui/core'
 import { CardMedia } from '@material-ui/core'
 import { CardContent } from '@material-ui/core'
-// import './dish.css'
+import { CircularProgress } from '@material-ui/core'
 
 const useStyles = makeStyles({
   root: {
@@ -104,7 +104,7 @@ const classes = useStyles();
         }
     
         if (status === "pending") {
-          return "Loading...";
+          return <CircularProgress color="black"/>;
         }
     
         if (status === "error") {

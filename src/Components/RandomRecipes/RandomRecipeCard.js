@@ -20,7 +20,7 @@ const useStyles = makeStyles({
       height: 150,
     },
     cardContent:{
-        height: 100,
+        height: 60,
     },
     cardHeader:{
     fontFamily: "Futura",
@@ -51,7 +51,7 @@ const RandomRecipeCard = ({recipe}) => {
     return (
         <>
             <Grid key={recipe.id} item xs={4} md={3} lg={3}>
-            <Link to={"/recipes/" + recipe.id}>
+            <Link to={"/recipes/" + recipe.id} style={{textDecoration: 'none'}}>
             <Card className={classes.root}>
               <CardActionArea>
                 <CardMedia
@@ -66,7 +66,7 @@ const RandomRecipeCard = ({recipe}) => {
                 </CardContent>
               <CardActions>
                 <Button className={classes.btn}>
-                <Link to={"/recipes/" + recipe.id} style={{ color: "white" }}>See Recipe</Link>
+                <Link to={"/recipes/" + recipe.id} style={{ color: "white", textDecoration: 'none'}}>See Recipe</Link>
                 </Button>
               </CardActions>
               </CardActionArea>

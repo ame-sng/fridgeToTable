@@ -22,7 +22,7 @@ const useStyles = makeStyles({
       height: 150,
     },
     cardContent:{
-        height: 100,
+        height: 60,
     },
     cardHeader:{
     fontFamily: "Futura",

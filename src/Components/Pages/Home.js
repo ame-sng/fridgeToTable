@@ -38,28 +38,28 @@ const Home = () => {
            >
                No more scratching your head about what to cook
            </Typography>
-           
-           <Typography 
-           variant = "body1"
-           align= "center"
-           gutterBottom
-           >
-               Simply input your available ingredients and get recipes
-           </Typography>
-           <br/>
-           <Button 
-           className= {classes.btn}
-           size="large"
-           >
-           <Link to="/recipes" style={{ color: 'white' }}>Let's Cook</Link>
-           </Button>
+            
+            <Typography 
+            variant = "body1"
+            align= "center"
+            gutterBottom
+            >
+                Simply input your available ingredients and get recipes
+            </Typography>
+            <br/>
+            <Button 
+            className= {classes.btn}
+            size="large"
+            >
+            <Link to="/recipes" style={{ color: 'white', textDecoration: 'none' }}>Let's Cook</Link>
+            </Button>
         </div>
         <br/>
 
         <Container>
-           <RandomRecipes />
+        <RandomRecipes />
         </Container>
-           </>
+        </>
     )
 }
 

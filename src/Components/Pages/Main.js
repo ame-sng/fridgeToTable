@@ -1,9 +1,9 @@
 import React from 'react'
 import  {Route, Switch } from 'react-router-dom'
 import Home from './Home'
-import InputForm from '../Recipe/InputForm'
+import FormMain from '../Form/FormMain'
 import Dish from '../Recipe/Dish'
-import ShowRecipe from '../Recipe/ShowRecipe'
+
 
 
 const Main = () => {
@@ -12,8 +12,7 @@ const Main = () => {
     <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/recipes/:id" component={Dish} />
-        {/* <Route path="/recipe/:ingredients/:cuisine/:type" component={ShowRecipe} /> */}
-        <Route path="/recipes" component={InputForm} />
+        <Route path="/recipes" component={FormMain} />
     </Switch>
 </main>
     )
