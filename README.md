@@ -15,8 +15,8 @@ Facing this problem countless times (especially while working from home), I want
 
 
 ### Wireframes
-
-images
+![Screenshot 2021-07-08 at 11 48 13 PM](https://user-images.githubusercontent.com/84389655/124952725-0ff5d100-e047-11eb-9d3a-6b5cf7f5454c.png)
+![Screenshot 2021-07-08 at 11 48 29 PM](https://user-images.githubusercontent.com/84389655/124952748-13895800-e047-11eb-973c-2cd66e9766a0.png)
 
 ### Who Should Use Fridge to Table
 Anyone who:
@@ -66,19 +66,19 @@ Hair-pulling, watching youtube tutorials, breaking down the problem (_what am I 
 ---
 
 ## Acknowledgments
-Powered by ![spoonacular API](https://spoonacular.com/food-api)
-Clothed by ![Material UI](https://material-ui.com/)
+- Powered by [spoonacular API](https://spoonacular.com/food-api)
+- Clothed by [Material UI](https://material-ui.com/)
 
 ---
 
  ## Inspirations and References
- - ![Bon Appétit](https://www.bonappetit.com/)
- - ![SuperCook](https://www.supercook.com/#/recipes)
- - ![Net Ninja Material UI Tutorials](https://www.youtube.com/playlist?list=PL4cUxeGkcC9gjxLvV4VEkZ6H6H4yWuS58)
+ - [Bon Appétit](https://www.bonappetit.com/)
+ - [SuperCook](https://www.supercook.com/#/recipes)
+ - [Net Ninja Material UI Tutorials](https://www.youtube.com/playlist?list=PL4cUxeGkcC9gjxLvV4VEkZ6H6H4yWuS58)
  ---
 
  ## Author
  Amelia Sng, a software engineer based in Singapore
 
- ![Github](https://github.com/ame-sng)
- ![Email](mailto:ameliasnghy@gmail.com)
+ [Github](https://github.com/ame-sng)
+ [Email](mailto:ameliasnghy@gmail.com)
