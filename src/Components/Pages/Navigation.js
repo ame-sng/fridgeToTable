@@ -42,21 +42,3 @@ const Navigation = () => {
 };
 
 export default Navigation;
-
-//   <Navbar bg="dark" variant="dark">
-//   <Navbar.Brand>
-//     <Link to="/">
-//       <img
-//       src={logo}
-//       width="40"
-//       height="40"
-//       className="d-inline-block align-top"
-//       alt="Fridge to Table logo"
-//       />
-//     </Link>
-//   </Navbar.Brand>
-//   <Nav className="mr-auto">
-//     <Nav.Link><Link to="/">Home</Link></Nav.Link>
-//     <Nav.Link><Link to="/recipes">Recipes</Link></Nav.Link>
-//   </Nav>
-// </Navbar>

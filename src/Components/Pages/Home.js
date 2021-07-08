@@ -36,7 +36,7 @@ const Home = () => {
            align="center"
            gutterBottom
            >
-               No more scratching your head about what to cook
+               No more scratching your head over what to cook
            </Typography>
             
             <Typography 
@@ -44,7 +44,7 @@ const Home = () => {
             align= "center"
             gutterBottom
             >
-                Simply input your available ingredients and get recipes
+                Tell us what you have and we'll tell you what to make
             </Typography>
             <br/>
             <Button 
@@ -64,8 +64,3 @@ const Home = () => {
 }
 
 export default Home
-
-{/* <h2 className="formheading" className="text-center">No more scratching your head about what to cook</h2>
-<p>Simply input your available ingredients and get recipes</p>
-<Button variant="dark"><Link to="/recipes">Let's Cook</Link></Button>
-<RandomRecipes /> */}

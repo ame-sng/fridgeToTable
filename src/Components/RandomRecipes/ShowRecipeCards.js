@@ -8,6 +8,7 @@ const useStyles = makeStyles({
     margin: "0 auto",
   },
 });
+
 const ShowRecipeCards = ({listRecipes, status}) => {
   const classes = useStyles();
     if (status === "idle") {

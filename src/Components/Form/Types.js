@@ -15,7 +15,7 @@ const Types = (props) => {
           value={props.addValue.type}
           onChange={props.typeChange}
         >
-          <MenuItem value={""}>-</MenuItem>
+          <MenuItem value={null}>-</MenuItem>
           <MenuItem value={"main course"}>Main Course</MenuItem>
           <MenuItem value={"side dish"}>Side Dish</MenuItem>
           <MenuItem value={"dessert"}>Dessert</MenuItem>

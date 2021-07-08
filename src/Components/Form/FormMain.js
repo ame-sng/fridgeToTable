@@ -7,8 +7,7 @@ import { Button } from "@material-ui/core";
 import { Container } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
-import { useHistory, useRouteMatch, useLocation } from "react-router";
-import { Link } from "react-router-dom";
+import { useHistory, useLocation } from "react-router";
 
 const useStyles = makeStyles({
   h1: {
@@ -58,12 +57,9 @@ function useQuery() {
 }
 
 const FormMain = () => {
-  // let {path, URL} = useRouteMatch()
   let history = useHistory();
   const location = useLocation();
-  // console.log("useParams: ", useParams());
-  // console.log("useLocation: ", useLocation());
-  console.log("useRouteMatch: ", useRouteMatch())
+
   let query = useQuery();
 
 
@@ -98,16 +94,9 @@ const FormMain = () => {
     
   };
 
-  
-  // const addIng = link.ingredients;
-  // const addCuisine = link.cuisine;
-  // const addType = link.type;
 
-  const url = `https://api.spoonacular.com/recipes/complexSearch?includeIngredients=${addValue.ingredients}&number=2&instructionsRequired=true&cuisine=${addValue.cuisine}&type=${addValue.type}&apiKey=${process.env.REACT_APP_APIKEY}`;
+  const url = `https://api.spoonacular.com/recipes/complexSearch?includeIngredients=${addValue.ingredients}&number=16&instructionsRequired=true&cuisine=${addValue.cuisine}&type=${addValue.type}&apiKey=${process.env.REACT_APP_APIKEY}`;
 
-  // console.log("ingredients", link.ingredients);
-  // console.log("cuisine", link.cuisine);
-  // console.log("type", link.type);
 
   useEffect(() => {
     if (

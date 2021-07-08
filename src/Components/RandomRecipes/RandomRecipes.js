@@ -10,7 +10,7 @@ const RandomRecipes = () => {
     const [listRecipes, setListRecipes] = useState([])
     const [status, setStatus] = useState("idle")
     const key = process.env.REACT_APP_APIKEY
-    const url = `https://api.spoonacular.com/recipes/random?number=2&apiKey=${key}`
+    const url = `https://api.spoonacular.com/recipes/random?number=8&apiKey=${key}`
     
     useEffect(() => {
         setStatus("pending");

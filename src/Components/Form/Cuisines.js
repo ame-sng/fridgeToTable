@@ -17,7 +17,7 @@ const Cuisines = (props) => {
           value={props.addValue.cuisine}
           onChange={props.cuisineChange}
         >
-          <MenuItem value={""}>-</MenuItem>
+          <MenuItem value={null}>-</MenuItem>
           <MenuItem value={"African"}>African</MenuItem>
           <MenuItem value={"American"}>American</MenuItem>
           <MenuItem value={"British"}>British</MenuItem>
