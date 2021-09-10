@@ -107,7 +107,7 @@ const FormMain = () => {
   };
 
 
-  const url = `https://api.spoonacular.com/recipes/complexSearch?includeIngredients=${addValue.ingredients}&number=3&sort=max-used-ingredients&sortDirection=asc&instructionsRequired=true&cuisine=${addValue.cuisine}&type=${addValue.type}&apiKey=${process.env.REACT_APP_APIKEY}`;
+  const url = `https://api.spoonacular.com/recipes/complexSearch?includeIngredients=${addValue.ingredients}&number=16&sort=max-used-ingredients&sortDirection=asc&instructionsRequired=true&cuisine=${addValue.cuisine}&type=${addValue.type}&apiKey=${process.env.REACT_APP_APIKEY}`;
 
 
   useEffect(() => {
