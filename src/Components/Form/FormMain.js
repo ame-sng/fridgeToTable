@@ -73,9 +73,21 @@ const FormMain = () => {
   });
 
   // const [link, setLink] = useState({});
-
+  
   const handleChange = (event) => {
-    setAddValue({ ...addValue, ingredients: event.target.value });
+    let ingredients = event.target.value
+    console.log("ingredients: ", ingredients)
+    let ingStr = ""
+    if(ingredients.includes(",")) {
+      console.log("includes")
+      ingStr = ingredients.split(",/\s+/").join()
+    }
+    else if (!ingredients.includes(",")) {
+      console.log("doesn't includes")
+      ingStr = ingredients.split(" ").join(",")
+    }
+    console.log("string: ", ingStr)
+    setAddValue({ ...addValue, ingredients: ingStr });
     console.log("ingredients added: ", addValue);
   };
 
@@ -95,7 +107,7 @@ const FormMain = () => {
   };
 
 
-  const url = `https://api.spoonacular.com/recipes/complexSearch?includeIngredients=${addValue.ingredients}&number=16&instructionsRequired=true&cuisine=${addValue.cuisine}&type=${addValue.type}&apiKey=${process.env.REACT_APP_APIKEY}`;
+  const url = `https://api.spoonacular.com/recipes/complexSearch?includeIngredients=${addValue.ingredients}&number=3&sort=max-used-ingredients&sortDirection=asc&instructionsRequired=true&cuisine=${addValue.cuisine}&type=${addValue.type}&apiKey=${process.env.REACT_APP_APIKEY}`;
 
 
   useEffect(() => {

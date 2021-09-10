@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react'
-// import { Link } from 'react-router-dom'
 import ShowRecipeCards from './ShowRecipeCards';
 import Grid from '@material-ui/core/Grid';
 
@@ -10,7 +9,7 @@ const RandomRecipes = () => {
     const [listRecipes, setListRecipes] = useState([])
     const [status, setStatus] = useState("idle")
     const key = process.env.REACT_APP_APIKEY
-    const url = `https://api.spoonacular.com/recipes/random?number=8&apiKey=${key}`
+    const url = `https://api.spoonacular.com/recipes/random?number=2&apiKey=${key}`
     
     useEffect(() => {
         setStatus("pending");

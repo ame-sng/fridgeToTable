@@ -16,13 +16,13 @@ import Typography from '@material-ui/core/Typography';
 const useStyles = makeStyles({
     root: {
       maxWidth: 300,
-      height: 300,
+      height: 340,
     },
     media: {
       height: 150,
     },
     cardContent:{
-        height: 60,
+        height: 95,
     },
     cardHeader:{
     fontFamily: "Futura",
@@ -30,6 +30,12 @@ const useStyles = makeStyles({
     textAlign: "center",
     letterSpacing: 1,
     },
+    cardBody:{
+      fontFamily: "Futura",
+      fontSize: 12,
+      textAlign: "center",
+      letterSpacing: 1,
+      },
     btn:{
     backgroundColor: "black",
     margin: "0 auto",
@@ -51,7 +57,7 @@ const RecipeCard = ({recipe}) => {
         return (
             <>
             <Grid item xs={4} md={3} lg={3}>
-            <Link to={"/recipes/" + recipe.id}>
+            <Link to={"/recipes/" + recipe.id} style={{ textDecoration: 'none' }}>
             <Card key={recipe.id} className={classes.root}>
               <CardActionArea>
                 <CardMedia
@@ -63,10 +69,13 @@ const RecipeCard = ({recipe}) => {
                   <Typography className={classes.cardHeader} gutterBottom variant="body1">
                     {recipe.title}
                   </Typography>
+                  <Typography className={classes.cardBody}>
+                    ({recipe.missedIngredientCount} missing ingredients)
+                  </Typography>
                 </CardContent>
               <CardActions>
                 <Button className={classes.btn}>
-                <Link to={"/recipes/" + recipe.id} style={{ color: "white" }}>See Recipe</Link>
+                <Link to={"/recipes/" + recipe.id} style={{ color: "white", textDecoration: 'none' }}>See Recipe</Link>
                 </Button>
               </CardActions>
               </CardActionArea>

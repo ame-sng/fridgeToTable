@@ -1,7 +1,4 @@
 import React from 'react';
-// import {Route, Link, Redirect, Switch} from 'react-router-dom'
-// import Bootstraptest from './Components/Bootstraptest';
-// import Apitest from './Components/Recipe/Apitest';
 import Navigation from './Components/Pages/Navigation';
 import Main from './Components/Pages/Main';
 import {createMuiTheme, ThemeProvider} from '@material-ui/core'
